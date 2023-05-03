@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<meta property='og:title' content='Scene-level Point Cloud Colorization with Semantics-and-geometry-aware Networks, ICRA2023'/>
+<meta property='og:image' content=''/>
+<meta property='og:description' content='Scene-level Point Cloud Colorization with Semantics-and-geometry-aware Networks, ICRA2023'/>
+<meta property='og:url' content=''/> <!--url for release-->
+<meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='663' />
+<!-- TYPE BELOW IS PROBABLY: 'website' or 'article' or look on https://ogp.me/#types -->
+<meta property="og:type" content='website'/>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZKE74FPW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9VZKE74FPW');
+</script>
+  <meta charset="utf-8">
+  <meta name="description" content="Scene-level Point Cloud Colorization with Semantics-and-geometry-aware Networks">
+  <meta name="keywords" content="SGNet, Point Cloud Colorization, Colorization, Point Cloud">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene-level Point Cloud Colorization with Semantics-and-Geometry-aware Networks</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/tab_gallery.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="stylesheet" href="juxtapose/css/juxtapose.css"> --> <!--For sliding window to compare two images simultaneously-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/magnifier.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/image_card_fader.css">
+  <link rel="stylesheet" href="./static/css/image_card_slider.css">
+
+</head>
+
+<style>
+  @import url('https://fonts.cdnfonts.com/css/menlo');
+</style>
+
+<body>
+  <section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Scene-level Point Cloud Colorization with Semantics-and-Geometry-aware Networks</h1>
+          
+          <div class="is-size-5 publication-venue">
+            <big>Published at ICRA 2023</big> <br><br>
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://rrgao.github.io/">Rongrong Gao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://tzxiang.github.io">Tian-Zhu Xiang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://chenyanglei.github.io/">Chenyang Lei</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://jaesik.info/">Jaesik Park</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cqf.io/">Qifeng Chen</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1&nbsp;</sup>CSE, HKUST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>2&nbsp;</sup>IIAI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>3&nbsp;</sup>POSTECH</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">  <!--static/paper/***.pdf-->
+                <a href="" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://cqf.io/papers/Point_Cloud_Colorization_ICRA2023.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/rrgao/Point_Cloud_Colorization"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- BibTex Link. -->
+              <span class="link-block">
+                <a href="#bibtex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span>
+              <!--Other icons. Video: class="fab fa-youtube"; Data: class="far fa-images"-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Opening/Intro-->
+<section class="hero teaser"> <!-- "is-light is-small" -> teaser -->
+  <div class="subtitle has-text-centered">
+    <div class="hero-body">
+      <img src='static/images/figure-pcc2.png' width="800" id="teaser-1"> 
+      <h2 class="subtitle has-text-centered">
+        <p>
+          Illustration of point cloud colorization. From left to right: (a) The input 3D point cloud with <br> coordinates only. 
+          (b) Our colorized point cloud with predicted color information. <br> (c) The ground-truth point cloud with real color information.
+        </p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- -------------------------------------------- -->
+<!--Template for addition of images and videos-->
+<!-- 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Sub-title</h2>
+      <div class="content has-text-justified">
+        <p>
+          Description. Comments: Below is to show 3 images in the same place by switching left and right. 
+          <br> 
+        </p>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-t2i0">
+          <img id="myt2i0" src="./static/images/img1.png"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/img2.jpg"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/img3.jpg"
+          class="interpolation-image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+<!--
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Sub-Title</h2>
+    <div class="has-text-justified">
+      <p>
+        Description. This is to show videos in two columns. 
+        <br>Description.
+      </p>
+    </div>
+    <br>
+    
+    <div class="columns is-centered">
+      
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/video1.mp4" type="video/mp4">
+          </video>
+          <div class="has-text-justified">
+          <p>
+            <b>Video title in bold.</b>
+            Text description for this video. 
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/video2.mp4"
+                      type="video/mp4">
+            </video>
+            <div class="has-text-justified">
+            <p>
+              <b>Video title in bold.</b>
+              Text description for this vide0.
+            </p>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+--> 
+
+<!-- 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Sub-Title</h2>
+      <div class="has-text-justified">
+      <p>
+        Description. To show two images simultaneously by sliding the window (input & output images). Using juxtapose. Customized a show function at the end named "tab\_gallery\_click". 
+        <br>
+      </p>
+      </div>
+      <!- The expanding image container ->
+      <div class="tab_container">
+        <!- Close the image ->
+        <!- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> ->
+
+        <!- Expanded image ->
+        <div id="juxtapose-embed" data-startingposition="30%" data-animate="true">
+        </div>
+
+        <div>
+          <div id="juxtapose-hidden"></div>
+        </div>
+        
+        <!- Image text ->
+        <div id="imgtext"></div>
+      </div>
+
+      <!- The grid: four columns ->
+      <div class="tab_row">
+        <div class="tab_column">
+          <img src="./static/images/iguana_input.jpg" onclick="tab_gallery_click('iguana');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/dog_input.jpg"  onclick="tab_gallery_click('dog');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/turtle_input.jpg" onclick="tab_gallery_click('turtle');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/kitten_input.jpg"  onclick="tab_gallery_click('kitten');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/guy_input.jpg"  onclick="tab_gallery_click('guy');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/boy_input.jpg"  onclick="tab_gallery_click('boy');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/horse_input.jpg"  onclick="tab_gallery_click('horse');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/pancake_input.jpg"  onclick="tab_gallery_click('pancake');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/elephant_input.jpg"  onclick="tab_gallery_click('elephant');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/plant_input.jpg"  onclick="tab_gallery_click('plant');">
+        </div>
+      </div> 
+    </div>
+  </div>
+</section> 
+-->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In robotic applications, we often obtain tons of 3D point cloud data without color information, and it is difficult to visualize point clouds in a meaningful and colorful way. 
+            Can we colorize 3D point clouds for better visualization? Existing deep learning-based colorization methods usually only take simple 3D objects as input, and their performance 
+            for complex scenes with multiple objects is limited. To this end, this paper proposes a novel semantics-and-geometry-aware colorization network, termed SGNet, 
+            for vivid scene-level point cloud colorization. Specifically, we propose a novel pipeline that explores geometric and semantic cues from point clouds containing only coordinates
+            for color prediction. We also design two novel losses, including a colorfulness metric loss and a pairwise consistency loss, to constrain model training for genuine colorization. 
+            To the best of our knowledge, our work is the first to generate realistic colors for point clouds of large-scale indoor scenes. 
+            Extensive experiments on the widely used ScanNet benchmarks demonstrate that the proposed method achieves state-of-the-art performance on point cloud colorization.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  
+  <div class="container is-max-desktop">
+    
+    <!--/ Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+
+        <!-- <h3 class="title is-4">SGNet architecture</h3> -->
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/figure-method.png" width="90%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Overall architecture of the proposed semantics-and-geometry-aware network (SGNet) for point cloud colorization. 
+            SGNet is proposed to do scene-level point cloud colorization task. <br>
+            <ul>
+              <li>It explores semantic and geometric features from the point cloud with only coordinate as inputs.</li>
+              <li>It is a sparse fully convolutional based network which is applicable in complex scenarios.</li>
+              <li>Two novel losses are proposed to generate visually vibrant colors and boost the learning.</li>
+            </ul>
+          </p>
+        </div>
+        
+        <!-- Template -->
+        <!--
+        <h3 class="title is-4">Sub-title</h3>
+        <div class="content has-text-centered">
+            <img src="./static/images/***.jpg" width="100%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Description.
+          </p>
+        </div>
+        -->
+      </div>
+    </div>
+
+
+    <br>
+
+    <!--/ Experiments. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Experiments & Results</h2>
+
+        <h3 class="title is-4">Quantitative Comparisons</h3>
+        
+        <div class="content has-text-justified"> <!--or "has-text-centered"-->
+          <p>Left table: Quantitative comparison with other methods for point cloud colorization using three evaluation metrics. 
+            ”↓” or ”↑” indicates that the method with the smaller or larger metrics is better than the others. The best results are highlighted in bold.</p>
+          <p>Right table: Preference score in the user study for the colorization results of different methods. The best results are highlighted in bold.</p>
+        </div>
+        <div class="content has-text-centered">
+          <img src='static/images/result-1.png' width="50%" id="result-1"> 
+          <img src="./static/images/result-2.png" width="39%" id="result-2">
+        </div>
+
+
+
+        <h3 class="title is-4">Visual Comparisons</h3>
+        
+        <div class="content has-text-justified">
+          <p>
+            Visual comparison with some representative SOTA models in challenging scenarios.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+            <img src="./static/images/visual-result.png" width="80%">
+        </div>
+
+
+        <h3 class="title is-6">Ablation Study 1: Colorization Based on Different Input Features</h3>
+        <div class="content has-text-centered">
+          <img src="./static/images/ablation-input.png" width="80%">
+        </div>
+
+        <h3 class="title is-6">Ablation Study 2: Colorization Based on Different Settings of Loss Terms</h3>
+        <div class="content has-text-centered">
+          <img src="./static/images/ablation-loss.png" width="80%">
+        </div>
+
+
+      </div>
+    </div>
+
+    <br><br>
+    <!-- Video -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video 🎬</h2>
+        <div class="publication-video">
+          <!-- <iframe src="https://www.youtube.com/xxx" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe> -->
+            <iframe src="./static/videos/ICRA2023-SGNet-Supp.mp4" title="SGNet Supp Video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Supplementary Material for SGNet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <br><br>
+    <!--/ Others. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Conference Poster</h2>
+        <div class="content has-text-centered">
+          <img src="./static/images/" width="80%">
+        </div>
+      </div>
+    </div>
+
+        
+
+    <!--/ Animation. -->
+    <!--Using juxtapose: customized a show function at the end named "Click"-->
+    <!--/ Reference: https://mingukkang.github.io/GigaGAN/ -->
+    <!-- 
+    <h3 class="title is-3">Click images to see more examples</h3>
+    <div id="player" style="cursor:pointer;">
+    </div>
+
+    <script>
+      class ClickListener {
+        constructor(images) {
+          this.rootElement = document.querySelector( "#player" );
+          this.element = document.createElement("img");
+          this.rootElement.appendChild(this.element);
+          this.images = images
+          this.idx = 0
+          this.k = 0;
+          this.init()
+        }
+
+        init() {
+          this.element.src = this.images[this.idx]
+          this.element.style.width = `320px`;
+          this.element.style.height = `320px`;
+          this.element.onclick = this.nextImage.bind(this); 
+        }
+
+        nextImage() {
+          this.idx++;
+          if(this.idx >= this.images.length) {
+            this.idx = 0;
+          }
+            setTimeout(this.identity(), 300); setTimeout(this.swapping(), 300);
+          }
+  
+
+        swapping() {
+          this.k += 90;
+          this.element.style.transitionDuration = "0.5s";
+          this.element.style.transform = "rotatey(" + this.k + "deg)";
+          this.element.src = this.images[this.idx];
+        }
+
+        identity() {
+          this.k += 90;
+          this.element.style.transitionDuration = "0.5s";
+          this.element.style.transform = "rotatey(" + this.k + "deg)";
+          this.element.src = this.element.src;
+        }
+        }
+
+      class ClickListener1 {
+      constructor(images) {
+        this.rootElement = document.querySelector( "#player" );
+        this.element = document.createElement("img");
+        this.rootElement.appendChild(this.element);
+        this.images = images
+        this.idx = 0
+        this.init()
+      }
+    
+      init() {
+        this.element.src = this.images[this.idx]
+        this.element.style.width = `320px`;
+        this.element.style.height = `50px`;
+        this.element.onclick = this.nextImage.bind(this)
+      }
+    
+      nextImage() {
+        this.idx++;
+        if(this.idx >= this.images.length) {
+          this.idx = 0;
+        }
+        this.element.src = this.images[this.idx]
+        }
+      }
+    </script>
+
+    <script>
+    new ClickListener(['./static/images/car0.jpg', './static/images/car1.jpg', './static/images/car2.jpg', './static/images/car3.jpg', './static/images/car4.jpg'])
+    new ClickListener(['./static/images/galaxy0.jpg', './static/images/galaxy1.jpg', './static/images/galaxy2.jpg', './static/images/galaxy3.jpg', './static/images/galaxy4.jpg'])
+    new ClickListener(['./static/images/newton0.jpg', './static/images/newton1.jpg', './static/images/newton2.jpg', './static/images/newton3.jpg', './static/images/newton4.jpg',])
+    new ClickListener1(['./static/images/caption0_0.png',])
+    new ClickListener1(['./static/images/caption0_1.png',])
+    new ClickListener1(['./static/images/caption0_2.png',])
+    new ClickListener(['./static/images/sea0.jpg', './static/images/sea1.jpg', './static/images/sea2.jpg', './static/images/sea3.jpg', './static/images/sea4.jpg'])
+    new ClickListener(['./static/images/candle2.jpg', './static/images/candle1.jpg', './static/images/candle3.jpg', './static/images/candle0.jpg', './static/images/candle4.jpg'])
+    new ClickListener(['./static/images/bread0.jpg', './static/images/bread1.jpg', './static/images/bread2.jpg', './static/images/bread3.jpg', './static/images/bread4.jpg',])
+    new ClickListener1(['./static/images/caption1_0.png',])
+    new ClickListener1(['./static/images/caption1_1.png',])
+    new ClickListener1(['./static/images/caption1_2.png',])
+    new ClickListener(['./static/images/alps0.jpg', './static/images/alps1.jpg', './static/images/alps2.jpg', './static/images/alps3.jpg', './static/images/alps4.jpg'])
+    new ClickListener(['./static/images/light0.jpg', './static/images/light1.jpg', './static/images/light2.jpg', './static/images/light3.jpg', './static/images/light4.jpg'])
+    new ClickListener(['./static/images/castle0.jpg', './static/images/castle1.jpg', './static/images/castle2.jpg', './static/images/castle3.jpg', './static/images/castle4.jpg'])
+    new ClickListener1(['./static/images/caption2_0.png',])
+    new ClickListener1(['./static/images/caption2_1.png',])
+    new ClickListener1(['./static/images/caption2_2.png',])
+    </script>
+    -->
+
+
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+    <pre><code>@inproceedings{Gao2023Feature,
+    author    = {Rongrong Gao, Tian-Zhu Xiang, Chenyang Lei, Jaesik Park and Qifeng Chen},
+    title     = {Scene-level Point Cloud Colorization with Semantics-and-geometry-aware Networks},
+    booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+    year      = {2023}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Visitor count-->
+  <div class="container has-text-centered">
+    <div style="display: inline-block; width: 200px; text-align: center;">
+      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/1.js?i=5zai3k78lw7&amp;s=220&amp;m=0&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+<!-- juxtapose: for sliding window to compare two images simultaneously -->
+
+<!-- 
+<script src="juxtapose/js/juxtapose.js"></script>
+
+<script>
+var slider;
+let origImages = [
+  {"src": "./static/images/iguana_input.jpg", "label": "Input Photos or Artworks (128px)",},
+  {"src": "./static/images/iguana_output.jpg", "label": "Upsampled by GigaGAN (4K)",}
+];
+let origOptions = {
+    "makeResponsive": true,
+    "showLabels": true,
+    "mode": "horizontal",
+    "showCredits": true,
+    "animate": true,
+    "startingPosition": "50"
+};
+
+const juxtaposeSelector = "#juxtapose-embed";
+const transientSelector = "#juxtapose-hidden";
+
+
+function tab_gallery_click(name) {
+  // Get the expanded image
+  let inputImage = {
+    label: "Input Photos or Artworks (128px)",
+  };
+  let outputImage = {
+    label: "Upsampled by GigaGAN (4K)",
+  };
+
+  inputImage.src = "./static/images/".concat(name, "_input.jpg")
+  outputImage.src = "./static/images/".concat(name, "_output.jpg")
+
+  let images = [inputImage, outputImage];
+  let options = slider.options;
+  options.callback = function(obj) {
+      var newNode = document.getElementById(obj.selector.substring(1));
+      var oldNode = document.getElementById(juxtaposeSelector.substring(1));
+      console.log(obj.selector.substring(1));
+      console.log(newNode.children[0]);
+      oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+      //newNode.removeChild(newNode.children[0]);  
+  };
+  
+  slider = new juxtapose.JXSlider(transientSelector, images, options);
+};
+
+
+(function() {
+    slider = new juxtapose.JXSlider(
+        juxtaposeSelector, origImages, origOptions);
+    //document.getElementById("left-button").onclick = replaceLeft;
+    //document.getElementById("right-button").onclick = replaceRight;
+})();
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  // expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = name;
+  // Show the container element (hidden with CSS)
+  // expandImg.parentElement.style.display = "block";
+
+$(".flip-card").click(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("out");
+            $(div_front).removeClass("in");
+
+            $(div_back).addClass("in");
+            $(div_back).removeClass("out");
+
+});
+
+$(".flip-card").mouseleave(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("in");
+            $(div_front).removeClass("out");
+
+            $(div_back).addClass("out");
+            $(div_back).removeClass("in");
+
+}); 
+-->
+
+
+
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>    
+
+
+</body>
+</html>
