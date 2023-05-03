@@ -1,12 +1,12 @@
 # COD-FSPNet Project page
 
-This is the repository that contains source code for the [COD-FSPNet Project](https://tzxiang.github.io/project/COD-FSPNet/index.html).
+This is the repository that contains project page for the [SGNet Project](https://rrgao.github.io/project/ICRA23/index.html).
 
 ```bib
 @inproceedings{Huang2023Feature,
-title={Feature Shrinkage Pyramid for Camouflaged Object Detection with Transformers},
-author={Huang, Zhou and Dai, Hang and Xiang, Tian-Zhu and Wang, Suo and Chen, Huai-Xin and Qin, Jie and Xiong, Huan},
-booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+title={Scene-level Point Cloud Colorization with Semantic-and-Geometric-aware Networks},
+author={Rongrong Gao, Tian-Zhu Xiang, Chenyang Lei, Jaesik Park, Qifeng Chen},
+booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
 year={2023}
 }
 ```
